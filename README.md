@@ -1,0 +1,1 @@
+A simple agentic arbitrage detection bot using Pydantic AI used to find listings that inherit lagging market indicator pricing against the currently lowest listed price for a particular MTG card.  
