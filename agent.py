@@ -1,13 +1,15 @@
 from pydantic_ai import Agent
 from pydantic_ai.tools import RunContext
-from models import ArbitrageAlert, CardPrice, WatchlistEntry
+from pydantic_ai.models.anthropic import AnthropicModel
+from models import ArbitrageAlert, WatchlistEntry
+from config import settings
 from tools.scraper import get_card_price
 from tools.sms import send_sms_alert
 import json
 
 agent = Agent(
     model="anthropic:claude-sonnet-4-20250514",
-    result_type=ArbitrageAlert | None,
+    output_type=ArbitrageAlert | None,
     system_prompt=(
         "You are an MTG card arbitrage sniper. "
         "Given a watchlist entry, you must:\n"
