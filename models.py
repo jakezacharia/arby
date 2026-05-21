@@ -5,6 +5,7 @@ class WatchlistEntry(BaseModel):
     set_name: str
     printing: str # ex. "Halo Foil", "Normal", "Foil"
     snipe_threshold: float # 1.10 = lowest <=110% of market, for example
+    url: str # tcgplayer product url 
 
 class CardPrice(BaseModel):
     card_name: str
